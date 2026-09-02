@@ -1,0 +1,3 @@
+await test.step('complete the synthetic order');
+await page.locator('#customer').fill('Ada Lovelace');
+await expect(page.locator('#result')).toHaveText('submitted:Ada Lovelace');
