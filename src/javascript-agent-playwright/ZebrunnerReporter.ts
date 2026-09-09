@@ -154,11 +154,7 @@ type SessionCapabilities = {
 };
 
 const isOrchestratorConfigured = (): boolean =>
-  Boolean(
-    isNotBlankString(process.env.PWM_ORCHESTRATOR) ||
-    isNotBlankString(process.env.IOS_WS_ENDPOINT) ||
-    isNotBlankString(process.env.ANDROID_WS_ENDPOINT),
-  );
+  Boolean(isNotBlankString(process.env.PLAYWRIGHT_MOBILE_ORCHESTRATOR_ENDPOINT));
 
 const resolveSessionProvider = (overrideCapabilities?: SessionCapabilities): string | undefined => {
   const fromCaps = overrideCapabilities?.['zebrunner:provider']?.trim();
